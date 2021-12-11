@@ -1,6 +1,8 @@
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import streamlit as st
+from wordcloud import WordCloud
 
 st.title("Uber pickups in NYC")
 
@@ -36,6 +38,21 @@ hist_values = np.histogram(data[DATE_COLUMN].dt.hour, bins=24, range=(0, 24))[
     0
 ]
 st.bar_chart(hist_values)
+
+st.subheader("Word Count")
+
+# Create some sample text
+text = "Fun, fun, awesome, awesome, tubular, astounding, \
+        superb, great, amazing, amazing, amazing, amazing"
+
+# Create and generate a word cloud image:
+wordcloud = WordCloud().generate(text)
+
+# Display the generated image:
+plt.imshow(wordcloud, interpolation="bilinear")
+plt.axis("off")
+plt.show()
+st.pyplot()
 
 # Some number in the range 0-23
 hour_to_filter = st.slider("hour", 0, 23, 17)
