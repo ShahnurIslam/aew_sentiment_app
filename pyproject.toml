@@ -6,6 +6,7 @@ authors = ["shahnur.islam <shahnur.islam@royalmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
+streamlit = "^1.2.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
