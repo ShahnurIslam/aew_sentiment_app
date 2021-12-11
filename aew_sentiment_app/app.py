@@ -49,10 +49,11 @@ text = "Fun, fun, awesome, awesome, tubular, astounding, \
 wordcloud = WordCloud().generate(text)
 
 # Display the generated image:
+fig = plt.figure(figsize=(8, 8))
 plt.imshow(wordcloud, interpolation="bilinear")
 plt.axis("off")
-plt.show()
-st.pyplot()
+plt.tight_layout()
+st.pyplot(fig)
 
 # Some number in the range 0-23
 hour_to_filter = st.slider("hour", 0, 23, 17)
