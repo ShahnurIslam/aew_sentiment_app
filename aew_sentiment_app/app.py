@@ -46,7 +46,7 @@ text = "Fun, fun, awesome, awesome, tubular, astounding, \
         superb, great, amazing, amazing, amazing, amazing"
 
 # Create and generate a word cloud image:
-wordcloud = WordCloud().generate(text)
+wordcloud = WordCloud(background_color="white").generate(text)
 
 # Display the generated image:
 fig = plt.figure(figsize=(8, 8))
